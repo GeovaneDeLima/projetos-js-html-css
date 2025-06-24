@@ -55,9 +55,12 @@ function mostrartarefanatela(){
             if(a.feito === 1){
                a.feito = 2 
                p1.style.textDecoration = 'line-through' 
+               chec.innerHTML = 'V'
             }else if (a.feito === 2) {
                 a.feito = 1
                 p1.style.textDecoration = 'none'
+                chec.innerHTML = 'X'
+
             }
             
 
