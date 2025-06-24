@@ -25,15 +25,42 @@ function adicionartarefa(){
 }
 
 function mostrartarefanatela(){
-    tarefas.forEach((a, index) =>  {
-        exibir.innerHTML = ""
+    exibir.innerHTML = ""
+    tarefas.forEach((a, indic) =>  {
         const div = document.createElement('div')
+        const chec = document.createElement('p')
+        const delet = document.createElement('p')
         const p1 = document.createElement('p')
 
         div.classList.add('tarefa')
+        delet.classList.add('delet')
+        chec.classList.add('delet')
+
         p1.innerHTML = a.tarefa
+        delet.innerHTML = 'deletar'
+        chec.innerHTML = 'X'
 
         exibir.appendChild(div)
+        div.appendChild(chec)
         div.appendChild(p1)
+        div.appendChild(delet)
+
+        delet.addEventListener('click', () => {
+            div.remove()
+            tarefas.splice(indic, 1)
+            console.log
+        })
+
+        chec.addEventListener('click', () => {
+            if(a.feito === 1){
+               a.feito = 2 
+               p1.style.textDecoration = 'line-through' 
+            }else if (a.feito === 2) {
+                a.feito = 1
+                p1.style.textDecoration = 'none'
+            }
+            
+
+        } )
     })
 }
