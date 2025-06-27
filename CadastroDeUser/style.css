@@ -1,0 +1,53 @@
+@charset "UTF-8";
+html{
+    height: 100vh;
+}
+body{
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(62, 9, 9);
+    color: white;
+}
+header h1{
+    text-align: center;
+}
+.content{
+    
+}
+main{
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.484);
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    width: 90%;
+}
+input{
+    display: block;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 90%;
+}
+input#cadastrar{
+    width: 50%;
+}
+footer{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+.exibir{
+    background-color: rgba(255, 255, 255, 0.456);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.exibir h3{
+    margin: 10px 0px -10px;
+    text-align: center;
+}
