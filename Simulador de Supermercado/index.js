@@ -1,5 +1,9 @@
 import {produtos} from './produtos.js'
 const carrinho = []
+let desconto = 0
+let totalAPagar = 0
+let totalBruto
+
 let acc = 0
 let list = document.createElement('div')
 list.classList.add('list')
@@ -9,17 +13,48 @@ document.getElementById('butlist').addEventListener('click', mostrarlista)
 document.getElementById('addcar').addEventListener('click', adicionarCarrinho)
 document.getElementById('fim').addEventListener('click', finalizarOperacao)
 
-// dinheiro - 10% pix - 15% car 0%
+function FeichamentoDeCompra(){
+    const pupUp = document.createElement('div')
+    const h1 = document.createElement('h1')
+    const p = document.createElement('p')
+    pupUp.classList.add('boleto')
+
+    document.body.appendChild(pupUp)
+    pupUp.appendChild(h1)
+    pupUp.appendChild(p)
+
+    const produtosn = carrinho.reduce((acc, pa) => {
+        acc = (pa.nome)
+        return acc
+    }, [])
+    h1.innerHTML = 'Finalizando Compra'
+    p.innerHTML = `<h4> Resumo da Compra: </h3> <br>
+    Produtos: ${produtosn} <br>
+    Total bruto: ${totalBruto} <br>
+    Desconto: ${desconto} <br>
+    Total a Pagar: ${totalAPagar}`
+}
+
+// dinheiro - 10% /  0pix - 15% / car 0%
 function finalizarOperacao(){
-    const desconto = 0
-    const totalbruto = carrinho.reduce((acc, pa) => {
-        return acc += pa.preco * pa.quantidade
+    totalBruto = carrinho.reduce((acc, pa) => {
+        acc += (pa.preco * pa.quantidade)
+        return acc
     }, 0)
+    
+
     const selecionado = document.querySelector('input[name="pag"]:checked')
-    if (selecionado === 'din'){
-        desconto = (totalbruto * 0.10)
+    if(selecionado === din){
+        totalAPagar = totalBruto - ((totalBruto * 10) / 100) 
+        desconto = ((totalBruto * 10) / 100)
+    }else if(selecionado === pix){
+        totalAPagar = totalBruto - ((totalBruto * 15) / 100)
+        desconto = ((totalBruto * 15) / 100)
+    }else if (selecionado == car) {
+        totalAPagar = totalBruto
     }
-    alert(desconto)
+
+    FeichamentoDeCompra()
 }
 
 function mostrarCarrinho(){
@@ -45,18 +80,19 @@ function mostrarCarrinho(){
 }
 
 function mostrarlista(){
+    list.innerHTML = ""
     acc += 1
-    if(acc == 1){
+    if(acc === 1){
         
         produtos.forEach((pa) => {
             const pro = document.createElement('p')
             pro.classList.add('pro')
             list.appendChild(pro)
-            pro.innerHTML = 'oi'
+            pro.innerHTML = `${pa.nome}    ${pa.preco}`
         
         })
         list.style.display = 'block'
-    }else if( acc == 2){
+    }else if( acc === 2){
         list.style.display = 'none' 
         acc -= 2   
     }
