@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(57, 56, 56);
+    color: white;
+}
+header{
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(30, 30, 30);
+}
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: rgb(24, 23, 23);
+    padding: 10px;
+}
+nav p{
+    padding: 3px;
+}
+nav p:hover{
+    background-color: lightgray;
+    color: black;
+    border-radius: 5px;
+    padding: 3px;
+}
+.adicionar {
+    text-align: center;
+    padding: 20px;
+}
+.adicionar h3{
+    margin-bottom: 10px;
+}
+.adicionar input{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    width: 400px;
+    text-align: center;
+}
+button#addcar, button#fim{
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.49);
+    border: none;
+    margin-top: 10px;
+}
+
+#addcar:hover, #fim:hover{
+    background-color: transparent;
+    border: 1px solid rgb(255, 253, 253);
+    color: white;
+}
+.pagamento{
+    text-align: center;
+}
+.pagamento h3{
+    margin-bottom: 10px;
+}
+
+.pag{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
+}
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+}
+div.produto{
+    display: none;
+}

@@ -3,11 +3,11 @@ const carrinho = []
 let desconto = 0
 let totalAPagar = 0
 let totalBruto
-
+let c = 0
 let acc = 0
 let list = document.createElement('div')
 list.classList.add('list')
-document.getElementById('header').appendChild(list)
+document.getElementById('list').appendChild(list)
 
 document.getElementById('butlist').addEventListener('click', mostrarlista)
 document.getElementById('addcar').addEventListener('click', adicionarCarrinho)
@@ -18,7 +18,7 @@ function FeichamentoDeCompra(){
     const h1 = document.createElement('h1')
     const p = document.createElement('p')
     pupUp.classList.add('boleto')
-
+    
     document.body.appendChild(pupUp)
     pupUp.appendChild(h1)
     pupUp.appendChild(p)
@@ -76,6 +76,16 @@ function mostrarCarrinho(){
             carrinho.splice(index, 1)
             mostrarCarrinho()
         })
+    })
+    document.getElementById('ascar').addEventListener('click', () => {
+        c += 1
+        if (c === 1){
+            document.querySelector('div.produto').style.display = 'block'
+
+        }else if(c === 2){
+            document.querySelector('div.produto').style.display = 'none'
+            c -= 2
+        }
     })
 }
 

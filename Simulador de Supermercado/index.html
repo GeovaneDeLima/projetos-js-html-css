@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caixa de Supermercado</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header id="header">
         <h1>Simulador de Caixa</h1>
-        <nav>
-           <P id="butlist">lista de Produtos</P>  
-        </nav>
-
+        
     </header>
+    <nav>
+        <P id="butlist">lista de Produtos</P> 
+        <p id="ascar">Carrinho<p>
+    </nav>
+    <div id="list"></div>
+    <div class="produto">
+        <div>
+            <p class="nome"></p>
+            <p class="preco"></p>
+        </div>
+        <div class="delet"></div>
+    </div>
     <aside class="adicionar">
         <div>
             <h3 id="addpro">Adicionar produto</h3>
@@ -29,19 +40,9 @@
             </div>
         </menu>
     </aside>
-    <article class="carrinho">
-        <h3 id="ascar">Carrinho</h3>
-        <div class="produto">
-            <div>
-                <p class="nome"></p>
-                <p class="preco"></p>
-            </div>
-            <div class="delet"></div>
-        </div>
-    </article>
     <aside class="pagamento">
         <h3>Pagamento</h3>
-        <div>
+        <div class="pag">
             <input type="radio" name="pag" id="din" value="din">
             <label for="din">Dinheiro</label> 
             
